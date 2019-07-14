@@ -36,43 +36,36 @@
 
 # 10) create class in main java with package
 
-package com.example.springapi;
-
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
-public class SpringApi {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		SpringApplication.run(SpringApi.class,args);
+	package com.example.springapi;
+	import org.springframework.boot.SpringApplication;
+	import org.springframework.boot.autoconfigure.SpringBootApplication;
+	@SpringBootApplication
+	public class SpringApi {
+		public static void main(String[] args) {
+			// TODO Auto-generated method stub
+			SpringApplication.run(SpringApi.class,args);
+		}
 	}
-
-}
 
 
 # 11) create controller in main/java with package
 
-package com.example.springapi.controller;
+	package com.example.springapi.controller;
+	import org.springframework.web.bind.annotation.RequestMapping;
+	import org.springframework.web.bind.annotation.RestController;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+	@RestController
 
-@RestController
-
-public class SpringApiController {
-	
-	@RequestMapping("/welcome")
-	public String welcomeSpringApi() {
-		return "Hello Spring ";
-	}
-
-	public static void main(String[] args) {
+	public class SpringApiController {
+		@RequestMapping("/welcome")
+		public String welcomeSpringApi() {
+			return "Hello Spring ";
+		}
+		
+		public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		}
 	}
-
-}
 
 
 # 12) If u want to change port den add application.properties in src/main/resources
@@ -95,47 +88,47 @@ server.port=9090
 		@Service
 	- lets begin for CRUD e.g.
 
-# 16)- 1st need to create main function e.g. springApi follow step 10
-   -2nd need to create controller package follow step 11
-    -3rd begin to step 15.
+# 16) Steps Started here
+	- 1st need to create main function e.g. springApi follow step 10
+   	-2nd need to create controller package follow step 11
+    	-3rd begin to step 15.
 
 # 17) CRUD e.g. employee management
 
 	-1st create package name any like detail or objects any
 	-2nd under that create class employee under this class having variables and functions which we need in employee management
 	e.g. 
-public class employee {
-	private int emp_id;
-	private String emp_name;
-	private String emp_dprt;
+	public class employee {
+		private int emp_id;
+		private String emp_name;
+		private String emp_dprt;
 	
-	
-	public employee(int emp_id, String emp_name, String emp_dprt) {
-		super();
-		this.emp_id = emp_id;
-		this.emp_name = emp_name;
-		this.emp_dprt = emp_dprt;
+		public employee(int emp_id, String emp_name, String emp_dprt) {
+			super();
+			this.emp_id = emp_id;
+			this.emp_name = emp_name;
+			this.emp_dprt = emp_dprt;
+		}
+		public int getEmp_id() {
+			return emp_id;
+		}
+		public void setEmp_id(int emp_id) {
+			this.emp_id = emp_id;
+		}
+		public String getEmp_name() {
+			return emp_name;
+		}
+		public void setEmp_name(String emp_name) {
+			this.emp_name = emp_name;
+		}
+		public String getEmp_dprt() {
+			return emp_dprt;
+		}
+		public void setEmp_dprt(String emp_dprt) {
+			this.emp_dprt = emp_dprt;
+		}
+
 	}
-	public int getEmp_id() {
-		return emp_id;
-	}
-	public void setEmp_id(int emp_id) {
-		this.emp_id = emp_id;
-	}
-	public String getEmp_name() {
-		return emp_name;
-	}
-	public void setEmp_name(String emp_name) {
-		this.emp_name = emp_name;
-	}
-	public String getEmp_dprt() {
-		return emp_dprt;
-	}
-	public void setEmp_dprt(String emp_dprt) {
-		this.emp_dprt = emp_dprt;
-	}
-	
-}
 
   -3rd create Autowired into controller class need to get all services from employee services to the controller
 	e.g. 
@@ -155,12 +148,14 @@ public class employee {
 	create method into employeeService interface
 
    -2) under SpringServices add list first
+   
 		List<employee> empList =new ArrayList<> (Arrays.asList(
 			new employee(1,"Bhushan","Computer Engineer"),
 			new employee(2,"Amit","Aggreeculture Engineer"),
 			new employee(3,"Pratik","Aggreeculture Engineer")));
 
-    -3) and also add 
+   -3) and also add 
+    
 		@Override
 	public List<employee> getAllEmployee() {
 		// TODO Auto-generated method stub
@@ -180,6 +175,7 @@ public class employee {
 	create method into employeeService interface
 
    -2) under Spring Services
+   
 	@Override
 	public employee getEmployeeById(int emp_id) {
 		// TODO Auto-generated method stub
@@ -201,6 +197,7 @@ public class employee {
 	create method into employeeService interface
 
    -2) under Spring Services
+   
 	@Override
 	public void updateEmployee(employee emp, int emp_id) {
 		int no = empList.size();
@@ -225,6 +222,7 @@ public class employee {
 	- @RequestBody is used to get and change all the employee data
 
    -2) under Spring Services
+   
 	@Override
 	public void addEmployee(employee emp) {
 		// TODO Auto-generated method stub
@@ -241,6 +239,7 @@ public class employee {
 	- @PathVariable is used to check value from employee list
 
    -2) under Spring Services
+   
 	@Override
 	public void deleteEmployee(int emp_id) {
 		// TODO Auto-generated method stub
