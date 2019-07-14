@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Bhushan Zade
+Build-Jdk: 11.0.3
+Implementation-Title: Spring Api
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.example.springboot
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-api
+Created-By: Maven Integration for Eclipse
+
