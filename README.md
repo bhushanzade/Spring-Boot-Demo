@@ -16,20 +16,20 @@
 
 # 8) After Creating add bellow dependencies , parent & properties in pom.xml
 
-  <parent>
-  	<groupId>org.springframework.boot</groupId>
-  	<artifactId>spring-boot-starter-parent</artifactId>
-  	<version>2.1.4.RELEASE</version>
-  </parent>
-  
-  <dependencies>
-  	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-web</artifactId>
-    <version>2.1.4.RELEASE</version>
-</dependency>
-  </dependencies>
+	  <parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+	  </parent>
+
+	  <dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-web</artifactId>
+	    <version>2.1.4.RELEASE</version>
+	</dependency>
+	  </dependencies>
 
 # 9) Update Maven Project wait until it download dependancy
 
